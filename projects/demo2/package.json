@@ -1,0 +1,14 @@
+{
+  "name": "vesm-demo2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vesm dev --port 8001"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "vesm": "^0.0.1"
+  }
+}

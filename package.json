@@ -1,0 +1,15 @@
+{
+  "name": "vesm-workspaces",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vesm dev"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "vesm": "^0.0.1"
+  }
+}

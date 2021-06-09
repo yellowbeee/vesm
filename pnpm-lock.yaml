@@ -1,0 +1,77 @@
+lockfileVersion: 5.3
+
+importers:
+
+  .:
+    specifiers:
+      typescript: ^4.3.2
+      vesm: ^0.0.1
+    dependencies:
+      vesm: link:packages/vesm
+    devDependencies:
+      typescript: 4.3.2
+
+  packages/vesm:
+    specifiers:
+      commander: ^7.2.0
+      esbuild: ^0.12.6
+      vesm-plugin-share: ^0.0.1
+    dependencies:
+      commander: 7.2.0
+      esbuild: 0.12.6
+      vesm-plugin-share: link:../vesm-plugin-share
+
+  packages/vesm-plugin-share:
+    specifiers:
+      axios: ^0.21.1
+    devDependencies:
+      axios: 0.21.1
+
+  projects/demo1:
+    specifiers:
+      vesm: ^0.0.1
+    dependencies:
+      vesm: link:../../packages/vesm
+
+  projects/demo2:
+    specifiers:
+      vesm: ^0.0.1
+    dependencies:
+      vesm: link:../../packages/vesm
+
+packages:
+
+  /axios/0.21.1:
+    resolution: {integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==}
+    dependencies:
+      follow-redirects: 1.14.1
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
+  /commander/7.2.0:
+    resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
+    engines: {node: '>= 10'}
+    dev: false
+
+  /esbuild/0.12.6:
+    resolution: {integrity: sha512-RDvVLvAjsq/kIZJoneMiUOH7EE7t2QaW7T3Q7EdQij14+bZbDq5sndb0tTanmHIFSqZVMBMMyqzVHkS3dJobeA==}
+    hasBin: true
+    requiresBuild: true
+    dev: false
+
+  /follow-redirects/1.14.1:
+    resolution: {integrity: sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: true
+
+  /typescript/4.3.2:
+    resolution: {integrity: sha512-zZ4hShnmnoVnAHpVHWpTcxdv7dWP60S2FsydQLV8V5PbS3FifjWFFRiHSWpDJahly88PRyV5teTSLoq4eG7mKw==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true

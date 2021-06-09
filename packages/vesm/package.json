@@ -1,0 +1,14 @@
+{
+  "name": "vesm",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "vesm": "./bin/index.js"
+  },
+  "dependencies": {
+    "commander": "^7.2.0",
+    "esbuild": "^0.12.6",
+    "vesm-plugin-share": "^0.0.1"
+  }
+}
