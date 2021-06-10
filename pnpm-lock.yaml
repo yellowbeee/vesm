@@ -15,16 +15,23 @@ importers:
     specifiers:
       commander: ^7.2.0
       esbuild: ^0.12.6
+      lodash: ^4.17.21
       vesm-plugin-share: ^0.0.1
+      vesm-plugin-stream: ^0.0.1
     dependencies:
       commander: 7.2.0
       esbuild: 0.12.6
+      lodash: 4.17.21
       vesm-plugin-share: link:../vesm-plugin-share
+      vesm-plugin-stream: link:../vesm-plugin-stream
 
   packages/vesm-plugin-share:
+    specifiers: {}
+
+  packages/vesm-plugin-stream:
     specifiers:
       axios: ^0.21.1
-    devDependencies:
+    dependencies:
       axios: 0.21.1
 
   projects/demo1:
@@ -47,7 +54,7 @@ packages:
       follow-redirects: 1.14.1
     transitivePeerDependencies:
       - debug
-    dev: true
+    dev: false
 
   /commander/7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
@@ -68,7 +75,11 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
-    dev: true
+    dev: false
+
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
 
   /typescript/4.3.2:
     resolution: {integrity: sha512-zZ4hShnmnoVnAHpVHWpTcxdv7dWP60S2FsydQLV8V5PbS3FifjWFFRiHSWpDJahly88PRyV5teTSLoq4eG7mKw==}

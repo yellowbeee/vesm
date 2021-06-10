@@ -15,21 +15,16 @@ module.exports = ({ exposes }) => {
     name: pluginName,
     setup(build) {
       build.onResolve({ filter: /.*/ }, (args) => {
-        if(args.kind === 'import-statement' && tryResolve(path.join(args.resolveDir, args.path))) {
+        let expose = tryResolve(path.join(args.resolveDir, args.path))
+        if(args.kind === 'import-statement' && expose) {
           return {
             namespace: pluginName,
-            path: args.path,
+            path: expose.modulePath,
+            external: true,
             pluginData: {
               resolveDir: args.resolveDir,
             }
           }
-        }
-      })
-
-      build.onLoad({ filter: /.*/, namespace: pluginName }, args => {
-        return {
-          contents: `export { default } from '${tryResolve(path.join(args.pluginData.resolveDir, args.path)).modulePath}'`,
-          resolveDir: './',
         }
       })
     }

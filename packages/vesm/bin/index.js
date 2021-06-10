@@ -11,6 +11,7 @@ program
   .option('-h, --hot', '是否使用热更新 默认不启动')
   .option('-p, --port <port>', '使用指定的端口')
   .action(d => {
+    d.env = d.env || 'dev'
     require('../scripts/dev')(d)
   })
 

@@ -5,7 +5,6 @@ module.exports = () => {
       'App2': 'src/App2',
     },
     esbuild: {
-      
     }
   }
 }
