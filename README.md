@@ -1,5 +1,7 @@
 # VESM
 
+- based on the construction of esbuild and the sharing of projects' modules
+
 ## setup
 
 ```bash
