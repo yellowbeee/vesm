@@ -1,7 +1,7 @@
-const merge = require('lodash/merge')
+import merge from 'lodash/merge.js'
 
-module.exports = (processArgs, config) => {
-  const devServerConfig = require('./devServer')(processArgs)
+export default async function(processArgs, config) {
+  const devServerConfig = (await import('./devServer.js')).default(processArgs)
 
   return merge({
     devServer: devServerConfig,

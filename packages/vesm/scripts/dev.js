@@ -1,8 +1,8 @@
-const esbuild = require('esbuild')
-const {getProjectConfig} = require('../helper/project')
+import esbuild from 'esbuild'
+import {getProjectConfig} from '../helper/project.js'
 
-module.exports = async (processArgs) => {
-  const config = getProjectConfig('development', processArgs)
+export default async function (processArgs) {
+  const config = await getProjectConfig('development', processArgs)
   esbuild
     .serve(
       config.devServer,

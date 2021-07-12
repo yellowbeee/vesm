@@ -10,6 +10,7 @@
     "typescript": "^4.3.2"
   },
   "dependencies": {
+    "react-refresh": "^0.10.0",
     "vesm": "^0.0.1"
   }
 }

@@ -1,9 +1,9 @@
-const path = require('path')
-const fs = require('fs')
-const {resolveDir} = require('./paths')
-const {DEFAULT_EXTENTION} = require('./constant')
+import path from 'path'
+import fs from 'fs'
+import {resolveDir} from './paths.js'
+import {DEFAULT_EXTENTION} from './constant.js'
 
-function flatIdDeps(deps) {
+export function flatIdDeps(deps) {
   let idDeps = {}
   for(let i in deps) {
     for(let ext of DEFAULT_EXTENTION) {
@@ -20,8 +20,4 @@ function flatIdDeps(deps) {
     }
   }
   return idDeps
-}
-
-module.exports = {
-  flatIdDeps
 }

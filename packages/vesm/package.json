@@ -2,15 +2,23 @@
   "name": "vesm",
   "version": "0.0.1",
   "main": "index.js",
+  "type": "module",
   "license": "MIT",
   "bin": {
     "vesm": "./bin/index.js"
   },
   "dependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
     "commander": "^7.2.0",
     "esbuild": "^0.12.6",
+    "esbuild-plugin-babel": "^0.2.3",
     "lodash": "^4.17.21",
+    "react-refresh": "^0.10.0",
+    "vesm": "^0.0.1",
     "vesm-plugin-share": "^0.0.1",
     "vesm-plugin-stream": "^0.0.1"
-  }
+  },
+  "extension": "js"
 }

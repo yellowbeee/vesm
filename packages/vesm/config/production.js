@@ -1,8 +1,8 @@
 
-const VesmPluginStream = require('vesm-plugin-stream')
-const {resolveOutDir} = require('../helper/paths')
+import VesmPluginStream from 'vesm-plugin-stream'
+import {resolveOutDir} from '../helper/paths'
 
-module.exports = (processArgs, config) => {
+export default function production(processArgs, config) {
   config.esbuild.plugins.push(VesmPluginStream())
   config.esbuild.outdir = resolveOutDir
   return config

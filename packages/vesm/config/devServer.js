@@ -1,10 +1,11 @@
-const path = require('path')
-const {resolveCli} = require('../helper/paths')
+import path from 'path'
+import {resolveCli} from '../helper/paths.js'
 
-module.exports = ({port}) => {
+export default function({port}) {
+  console.log(222, resolveCli)
   return {
     host:'0.0.0.0',
-    servedir: path.resolve(resolveCli, './template/public'),
+    servedir: path.join(resolveCli, './template/public'),
     port: port ? Number(port) : 8000
   }
 }

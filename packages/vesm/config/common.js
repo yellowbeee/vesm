@@ -1,11 +1,12 @@
-const path = require('path')
-const merge = require('lodash/merge')
-const VesmPluginShare = require('vesm-plugin-share')
-const {resolveDir, resolveOutDir, resolvePackageJson, resolveVesmConfig} = require('../helper/paths')
-const {flatIdDeps} = require('../helper/flatIdDeps')
+import path from 'path'
+import merge from 'lodash/merge.js'
+import VesmPluginShare from 'vesm-plugin-share'
+import babel from 'esbuild-plugin-babel'
+import {resolveDir, resolveOutDir, resolvePackageJson, resolveVesmConfig} from '../helper/paths.js'
+import {flatIdDeps} from '../helper/flatIdDeps.js'
 
 
-module.exports = ({src}, userVesmConfig = {}) => {
+export default function({src}, userVesmConfig = {}) {
   const config = userVesmConfig
   src = src || 'src/index.ts'
   src = path.join(resolveDir, src)
@@ -27,6 +28,7 @@ module.exports = ({src}, userVesmConfig = {}) => {
     // inject: [injectReact],
     loader: {
       '.tsx': 'tsx',
+      '.jsx': 'jsx',
       '.ts': 'ts',
       '.css': 'css',
       '.js': 'jsx',
@@ -34,7 +36,14 @@ module.exports = ({src}, userVesmConfig = {}) => {
       '.png': 'dataurl',
     },
     // define: {global: 'window'},
-    plugins: [VesmPluginShare({exposes: idDeps})],
+    plugins: [babel({
+      config: {
+        presets: ["@babel/preset-env", "@babel/preset-react"],
+        plugins: [
+          ['react-refresh/babel', { skipEnvCheck: true }]
+        ]
+      }
+    }), VesmPluginShare({exposes: idDeps})],
   }, config.esbuild)
 
   return config

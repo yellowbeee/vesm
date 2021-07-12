@@ -1,4 +1,4 @@
-const DEFAULT_EXTENTION = [
+export const DEFAULT_EXTENTION = [
   '.mjs',
   '.js',
   '.ts',
@@ -6,7 +6,3 @@ const DEFAULT_EXTENTION = [
   '.tsx',
   '.json'
 ]
-
-module.exports = {
-  DEFAULT_EXTENTION
-}
